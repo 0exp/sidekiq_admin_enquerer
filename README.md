@@ -10,6 +10,7 @@
 
 # TODO:
 
+- job invocation form redesign;
 - interactive UI tabs for each performing method (sidekiq's UI has no jquery and bootstrap-js integrations);
 - job invocation rework (support for kwarg invocation and analysis of passed attributes);
 - specs;
