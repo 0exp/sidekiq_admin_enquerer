@@ -82,7 +82,7 @@ module SidekiqAdminEnquerer
     def load
       if defined?(Sidekiq::Web)
         Sidekiq::Web.register(SidekiqAdminEnquerer::WebApp)
-        Sidekiq::Web.tabs['Enqueuer'] = 'enqueuer'
+        Sidekiq::Web.tabs['Enquerer'] = 'enquerer'
       end
     end
   end

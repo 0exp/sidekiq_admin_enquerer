@@ -40,10 +40,10 @@ require 'sidekiq_admin_enquerer'
 
 # ...your sidekiq configs...
 
-SidekiqAdminEnqueuer.load
+SidekiqAdminEnquerer.load
 ```
 
-- navigate to `/your-sidekiq-path/enqueuer`
+- navigate to `/your-sidekiq-path/enquerer`
 
 ---
 

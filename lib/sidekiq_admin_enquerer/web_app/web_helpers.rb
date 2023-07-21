@@ -9,7 +9,7 @@ module SidekiqAdminEnquerer::WebApp::WebHelpers
   # @api private
   # @since 0.1.0
   def side_enq__enqueue_path(job)
-    "#{root_path}enqueuer/#{job.name}"
+    "#{root_path}enquerer/#{job.name}"
   end
 
   # @return [String]
@@ -17,7 +17,7 @@ module SidekiqAdminEnquerer::WebApp::WebHelpers
   # @api private
   # @since 0.1.0
   def side_enq__enqueue_job_path
-    "#{root_path}enqueuer"
+    "#{root_path}enquerer"
   end
 
   # @param job_method [SidekiqAdminEnquerer::WebApp::JobMethodWrapper]

@@ -27,19 +27,19 @@ module SidekiqAdminEnquerer::WebApp
     def registered(app)
       app.helpers(WebHelpers)
 
-      app.get('/enqueuer') do
+      app.get('/enquerer') do
         @jobs = AppControl.jobs
         render(:erb, TEMPLATES[:jobs])
       end
 
-      app.get('/enqueuer/:job_name') do
+      app.get('/enquerer/:job_name') do
         @job = AppControl.find_job(params[:job_name])
         render(:erb, TEMPLATES[:job])
       end
 
-      app.post('/enqueuer') do
+      app.post('/enquerer') do
         AppControl.run_job(params)
-        redirect File.join(root_path, 'enqueuer')
+        redirect File.join(root_path, 'enquerer')
       end
     end
   end
