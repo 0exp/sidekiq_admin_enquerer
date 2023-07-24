@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sidekiq_admin_enquerer (0.1.1)
+    sidekiq_admin_enquerer (0.1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -97,6 +97,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-darwin-22
 
 DEPENDENCIES
   armitage-rubocop (~> 1.51)

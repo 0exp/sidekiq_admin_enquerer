@@ -48,11 +48,12 @@ module SidekiqAdminEnquerer
     #
     # @api private
     # @since 0.1.0
+    # @version 0.1.2
     # rubocop:disable Metrics/AbcSize
     def run_job(job, params)
       # TODO: rework with attribute analysis
       job_perform_method = params['perform_method']
-      job_params = params[job_perform_method]
+      job_params = params[job_perform_method] || {} # NOTE: {} means that no parameters were passed
       job.respond_to?(:sidekiq_options) ? job.sidekiq_options['queue'].to_s : 'default'
 
       if params['submit'] == 'enqueue'
