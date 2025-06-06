@@ -10,6 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors = ['Rustam Ibragimov']
   spec.email   = ['iamdaiver@gmail.com']
 
+  spec.files       = Dir['{lib,web}/**/*']
+
   spec.summary     = 'Sidekiq Admin Enquerer.'
   spec.description = 'Sidekiq Admin Enquerer.'
   spec.homepage    = 'https://github.com/0exp/sidekiq_admin_enquerer'
