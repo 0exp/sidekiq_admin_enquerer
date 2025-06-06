@@ -38,7 +38,7 @@ module SidekiqAdminEnquerer::WebApp
       end
 
       app.post('/enquerer') do
-        AppControl.run_job(url_params)
+        AppControl.run_job(request.params)
         redirect File.join(root_path, 'enquerer')
       end
     end
