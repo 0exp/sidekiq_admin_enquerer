@@ -1,34 +1,35 @@
 <h3>Enqueue Job</h3>
 
 <!-- TODO: add interactive tabs (for each performing method) -->
-<!-- NOTE: sidekiq's UI has no jquery and bootstrap-js integrations -->
 
-<% @job.methods.each do |job_method| %>
-  <div class="form-group"><%= job_method.name %></div>
-  <form method="post" action="<%= side_enq__enqueue_job_path %>">
-    <%= csrf_tag if respond_to?(:csrf_tag) %>
-    <input class="form-control" name="perform_method" value="<%= job_method.name %>" readonly />
-    <input class="form-control" name="job_name" value="<%= @job.name %>" readonly />
-    <% job_method.params.each do |job_param| %>
+<section>
+  <% @job.methods.each do |job_method| %>
+    <div class="form-group"><%= job_method.name %></div>
+    <form method="post" action="<%= side_enq__enqueue_job_path %>">
+      <%= csrf_tag if respond_to?(:csrf_tag) %>
+      <input class="form-control" name="perform_method" value="<%= job_method.name %>" readonly />
+      <input class="form-control" name="job_name" value="<%= @job.name %>" readonly />
+      <% job_method.params.each do |job_param| %>
+        <div class="form-group">
+          <label for="<%= job_method.name %>[<%= job_param.name %>]">
+            <b><%= side_enq__param_requirement(job_param) %></b>: <%= job_param.name %>
+          </label>
+          <input class="form-control" name="<%= job_method.name %>[<%= job_param.name %>]" />
+        </div>
+      <% end %>
+
       <div class="form-group">
-        <label for="<%= job_method.name %>[<%= job_param.name %>]">
-          <b><%= side_enq__param_requirement(job_param) %></b>: <%= job_param.name %>
-        </label>
-        <input class="form-control" name="<%= job_method.name %>[<%= job_param.name %>]" />
+        <input type="submit" class="btn btn-danger" name="submit" value="enqueue" />
       </div>
-    <% end %>
 
-    <div class="form-group">
-      <input type="submit" class="btn btn-danger" name="submit" value="enqueue" />
-    </div>
+      <div class="form-group">
+        <label for="enqueue_in">Schedule</label>
+        <input class="form-control" name="enqueue_in" placeholder="in seconds" />
+      </div>
 
-    <div class="form-group">
-      <label for="enqueue_in">Schedule</label>
-      <input class="form-control" name="enqueue_in" placeholder="in seconds" />
-    </div>
+      <input type="submit" class="btn btn-danger" name="submit" value="schedule" />
+    </form>
 
-    <input type="submit" class="btn btn-danger" name="submit" value="schedule" />
-  </form>
-
-  <hr />
-<% end %>
+    <hr />
+  <% end %>
+</section>
