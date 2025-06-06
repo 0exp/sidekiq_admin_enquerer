@@ -33,12 +33,12 @@ module SidekiqAdminEnquerer::WebApp
       end
 
       app.get('/enquerer/:job_name') do
-        @job = AppControl.find_job(url_params(:job_name))
+        @job = AppControl.find_job(route_params(:job_name))
         render(:erb, TEMPLATES[:job])
       end
 
       app.post('/enquerer') do
-        AppControl.run_job(route_params)
+        AppControl.run_job(url_params)
         redirect File.join(root_path, 'enquerer')
       end
     end
