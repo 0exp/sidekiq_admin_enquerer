@@ -84,7 +84,12 @@ module SidekiqAdminEnquerer
       if defined?(Sidekiq::Web)
         Sidekiq::Web.configure do |config|
           config.register(
-            SidekiqAdminEnquerer::WebApp, name: 'enquerer', tab: ['Enquerer'], index: ['enquerer']
+            SidekiqAdminEnquerer::WebApp,
+            name: 'enquerer',
+            tab: ['Enquerer'],
+            index: ['enquerer'],
+            root_dir: 'web/',
+            asset_paths: %w[stylesheets-enquerer],
           )
         end
       end
