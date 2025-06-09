@@ -28,7 +28,7 @@ module SidekiqAdminEnquerer::WebApp
       # @api private
       # @since 0.1.0
       def run_job(job_run_params)
-        job_name = job_run_params[:job_name]
+        job_name = job_run_params['job_name']
         job_klass = SidekiqAdminEnquerer.find_job(job_name)
         SidekiqAdminEnquerer.run_job(job_klass, job_run_params)
       end
