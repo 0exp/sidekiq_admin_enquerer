@@ -2,8 +2,8 @@
 
 ## [0.2.0] - 2025-06-09
 ### Changed
-- Minimum Sidekiq version (`sidekiq >= 8`);
-- Adopt admin panels to Sidekiq@8;
+- Minimum Sidekiq version (`sidekiq >= 8`) ([@KirIgor](https://github.com/KirIgor));
+- Adopt admin panels to Sidekiq@8 ([@KirIgor](https://github.com/KirIgor));
 
 ## [0.1.2] - 2023-07-24
 ### Fixed
