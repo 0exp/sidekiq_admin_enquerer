@@ -88,8 +88,8 @@ module SidekiqAdminEnquerer
             name: 'enquerer',
             tab: ['Enquerer'],
             index: ['enquerer'],
-            root_dir: File.expand_path("../web", File.dirname(__FILE__)),
-            asset_paths: ["stylesheets-enquerer"],
+            root_dir: File.expand_path('../web', File.dirname(__FILE__)),
+            asset_paths: ['stylesheets-enquerer']
           )
         end
       end
