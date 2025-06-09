@@ -1,5 +1,9 @@
-# Changelog
-All notable changes to this project will be documented in this file.
+## [Unreleased]
+
+## [0.2.0] - 2025-06-09
+### Changed
+- Minimum Sidekiq version (`sidekiq >= 8`);
+- Adopt admin panels to Sidekiq@8;
 
 ## [0.1.2] - 2023-07-24
 ### Fixed
